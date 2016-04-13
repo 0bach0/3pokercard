@@ -1,0 +1,54 @@
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="container-fluid">
+	        <div class="navbar-header">
+	            <a class="navbar-brand" href=""><img src="app/images/logo.png" alt=""></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+            	</button>
+	        </div>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+
+	        <div class="collapse navbar-collapse navbar-right" id="navbarCollapse">
+	            <ul class="nav navbar-nav">
+	                <li><a href="" data-toggle="modal" data-target="#myModal" >Help</a></li>
+	                <li *ngIf="loged"><a  (click)="logout()" style="cursor: pointer;">Logout</a></li>
+	                <li *ngIf="!loged"><a (click)="login()"  style="cursor: pointer;">Login</a></li>
+
+ 					<!-- TODO hidden  -->
+ 					<!-- <li ><a  (click)="logout()" style="cursor: pointer;">Logout</a></li>
+	 	            <li ><a (click)="login()"  style="cursor: pointer;">Login</a></li> -->
+	            </ul>
+	        </div>
+	    </div>
+
+
+</nav>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><b>LUẬT CHƠI</b></h4>
+      </div>
+      <div class="modal-body">
+       - Bộ bài chơi 3 Cây gồm 36 lá chỉ gồm các lá từ A đến 9.<br>
+	- Một một người được chia 3 lá ngẫu nhiên, sau đó cộng điểm với nhau. Nếu tổng điểm lớn hơn 10, sẽ chỉ lấy tính hàng đơn vị. ( 20 điểm được coi là 10 )<br>
+	- Nếu điểm bằng nhau sẽ so sánh từng quân bài của hai bên. Trước tiên là so theo chất theo thứ tự Rô♦,Cơ♥ ,Tép♣, Bích♠. Sau đó so theo con số của chất, lớn ăn bé. Trường hợp đặc biệt, bài có Át rô là bài có chất cao nhất.
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

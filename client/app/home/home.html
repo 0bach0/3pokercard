@@ -1,0 +1,29 @@
+<script src=""></script>
+
+<div class="container" style="margin-top:6%">
+	<div class="row">
+	  	<div class="col-md-6 col-xs-6 right-border">
+		  	<h1>User List</h1>
+		  		<ol>
+		  		   	<li *ngFor="#item of userList" [style.color] = "item===name ? 'rgb(0, 77, 153)' : ''"> {{item}}   </li>
+		  		</ol>
+		    <button type="button" class="btn btn-primary" (click)="enterRoom()" *ngIf="!ent">Room Enter</button>
+
+			<em style="display:block;margin-top: 20px">This version only has 1 room.</em>
+		    
+		</div>
+
+	  	<div class="col-md-6 col-xs-6 right-content">
+	  	<h1>Room</h1>
+	  	
+	  			<ol *ngIf="peoplenumber!=0">
+		  		    <li *ngFor="#item of accountRoom" > {{item}} <em *ngIf="admin && (item===name)">(Admin)</em></li>
+		  		</ol>
+		  		<em *ngIf="peoplenumber==0" style="display:block;margin-top: 20px">No body here. Come now to be admin.</em>		  		
+
+		  		<button type="button" class="btn btn-primary" [disabled]="peoplenumber!=4" *ngIf="admin" (click)="gameStart()">Start!</button>
+	  	</div>
+    </div>
+
+    
+</div>
